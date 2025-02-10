@@ -59,11 +59,11 @@ export default function LoginPage() {
                         </div>
                         <div className="space-y-8">
                             <div className="flex items-center">
-                                <input 
+                                <input
                                     type="checkbox"
                                     id="show-password"
                                     className="w-4 h-4 border border-black bg-[#F9F9F9] shadow-sm focus:outline-none mr-2"
-                                 />
+                                />
                                 <label htmlFor="show-password" className="text-sm text-[#4A4A4A] font-light">
                                     Mostrar a senha.
                                 </label>
