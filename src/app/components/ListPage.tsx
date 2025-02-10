@@ -1,8 +1,5 @@
-"use client";
-
 import Header from './Header';
 import Card from './Card';
-import WithAuth from './WithAuth';
 
 interface ListPageProps {
     title: string;
@@ -27,4 +24,4 @@ const ListPage: React.FC<ListPageProps> = ({ title, items }) => (
     </div>
 );
 
-export default WithAuth(ListPage);
+export default ListPage;
