@@ -6,7 +6,7 @@ import WithAuth from './WithAuth';
 
 interface ListPageProps {
     title: string;
-    items: { name: string; image: string }[];
+    items: { name: string; link: string }[];
 }
 
 const ListPage: React.FC<ListPageProps> = ({ title, items }) => (
@@ -19,7 +19,7 @@ const ListPage: React.FC<ListPageProps> = ({ title, items }) => (
             <div className="w-full grid grid-cols-3 gap-10">
                 {items.map((item, index) => (
                     <div key={index} className="justify-items-center">
-                        <Card key={index} name={item.name} image={item.image} />
+                        <Card key={index} name={item.name} link={item.link} />
                     </div>
                 ))}
             </div>
