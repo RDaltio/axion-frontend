@@ -34,7 +34,7 @@ export default function LoginPage() {
                 return;
             }
 
-            localStorage.setItem("token", data.jwt);
+            sessionStorage.setItem("token", data.jwt);
             toast.success("Login realizado com sucesso!", {
                 position: "bottom-left",
             });
@@ -144,7 +144,7 @@ export default function LoginPage() {
                 <button className="w-full border border-gray-300 py-2 text-[#4A4A4A]">
                     Cadastrar
                 </button>
-                <div className="text-center text-xs text-[#4A4A4A] font-light">
+                <div className="text-center text-xs text-[#4A4A4A] font-light mt-8">
                     <a href="#">Termos de uso</a> · <a href="#">Política de privacidade</a>
                 </div>
             </div>
