@@ -28,14 +28,14 @@ export default function LoginPage() {
             const data = await response.json();
 
             if (!response.ok) {
-                toast.error(data.error?.message || "Erro ao fazer login", {
+                toast.error(data.error?.message || "Invalid credentials", {
                     position: "bottom-left",
                 });
                 return;
             }
 
             sessionStorage.setItem("token", data.jwt);
-            toast.success("Login realizado com sucesso!", {
+            toast.success("Login successful!", {
                 position: "bottom-left",
             });
 
@@ -43,7 +43,7 @@ export default function LoginPage() {
                 router.push("/foods");
             }, 1500);
         } catch {
-            toast.error("Erro ao fazer login", {
+            toast.error("Invalid credentials", {
                 position: "bottom-left",
             });
         }

@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Axion Front-end
 
-## Getting Started
+Este é um projeto de teste desenvolvido para a Axion utilizando Next.js e TypeScript. O objetivo é apresentar telas de login, registro e visualização de coleções, garantindo uma interface intuitiva e responsiva.
 
-First, run the development server:
+📌 Funcionalidades
+
+- Login (/login) - Tela de autenticação do usuário.
+
+- Registro (/register) - Tela para criação de nova conta.
+
+- Foods (/foods) - Visualização da coleção de alimentos.
+
+- People (/people) - Visualização da coleção de pessoas.
+
+- Places (/places) - Visualização da coleção de locais.
+
+🛠 Tecnologias Utilizadas
+
+- Next.js - Framework para React com renderização otimizada.
+
+- TypeScript - Tipagem estática para mais segurança no código.
+
+- CSS Modules / TailwindCSS - Estilização das páginas e componentes.
+
+## 🚀 Como Executar o Projeto
+
+1️⃣ Clone o Repositório
+
+```bash
+git clone https://github.com/RDaltio/axion-frontend.git
+cd axion-frontend
+```
+
+2️⃣ Instale as Dependências
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+3️⃣ Inicie o Servidor de Desenvolvimento
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A aplicação estará disponível em http://localhost:3000.

@@ -30,13 +30,13 @@ export default function RegisterPage() {
             const data = await response.json();
 
             if (!response.ok) {
-                toast.error(data.error?.message || "Erro ao cadastrar usuário", {
+                toast.error(data.error?.message || "Error registering user", {
                     position: "bottom-left",
                 });
                 return;
             }
 
-            toast.success("Usuário cadastrado com sucesso!", {
+            toast.success("User registered successfully!", {
                 position: "bottom-left",
             });
 
@@ -44,7 +44,7 @@ export default function RegisterPage() {
                 router.push("/login");
             }, 1500);
         } catch {
-            toast.error("Erro ao cadastrar usuário", {
+            toast.error("Error registering user", {
                 position: "bottom-left",
             });
         }
