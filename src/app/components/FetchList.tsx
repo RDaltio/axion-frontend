@@ -5,7 +5,8 @@ import ListPage from '../components/ListPage';
 
 interface DataItem {
   name: string;
-  link: string
+  link: string;
+  description: string;
 }
 
 interface FetchListProps {

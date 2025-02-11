@@ -6,7 +6,8 @@ import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function LoginPage() {
+export default function RegisterPage() {
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -16,11 +17,12 @@ export default function LoginPage() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:1337/auth/local", {
+            const response = await fetch("http://localhost:1337/auth/local/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    identifier: email,
+                    username: username,
+                    email: email,
                     password: password,
                 }),
             });
@@ -28,22 +30,21 @@ export default function LoginPage() {
             const data = await response.json();
 
             if (!response.ok) {
-                toast.error(data.error?.message || "Erro ao fazer login", {
+                toast.error(data.error?.message || "Erro ao cadastrar usuário", {
                     position: "bottom-left",
                 });
                 return;
             }
 
-            sessionStorage.setItem("token", data.jwt);
-            toast.success("Login realizado com sucesso!", {
+            toast.success("Usuário cadastrado com sucesso!", {
                 position: "bottom-left",
             });
 
             setTimeout(() => {
-                router.push("/foods");
+                router.push("/login");
             }, 1500);
         } catch {
-            toast.error("Erro ao fazer login", {
+            toast.error("Erro ao cadastrar usuário", {
                 position: "bottom-left",
             });
         }
@@ -61,6 +62,31 @@ export default function LoginPage() {
                     />
                 </div>
                 <form className="space-y-4" onSubmit={handleSubmit}>
+                    <div>
+                        <label className="block text-sm font-semibold text-[#4A4A4A] mb-1">
+                            Username
+                        </label>
+                        <div className="flex items-center border border-black bg-[#F9F9F9] shadow-sm px-4 py-2">
+                            <input
+                                type="username"
+                                placeholder="username"
+                                className="flex-grow bg-transparent focus:outline-none text-[#4A4A4A]"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                            <div className="ml-2">
+                                <Image
+                                    src="/imgs/assets/user.png"
+                                    alt="User Icon"
+                                    width={16}
+                                    height={16}
+                                    className="object-contain opacity-40"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
                         <label className="block text-sm font-semibold text-[#4A4A4A] mb-1">
                             Email
@@ -124,32 +150,17 @@ export default function LoginPage() {
                                     Mostrar a senha.
                                 </label>
                             </div>
-                            <div className="space-y-8">
-                                <a href="#" className="text-[#4A4A4A] text-sm block">
-                                    Problemas para acessar sua conta?
-                                </a>
+                            <div className="">
                                 <button className="w-full bg-gradient-to-r from-[#AE23A9] to-[#DC4E1B] text-white py-2">
-                                    Acessar
+                                    Cadastrar
                                 </button>
+                                <div className="text-center text-xs text-[#4A4A4A] font-light mt-8">
+                                    <a href="#">Termos de uso</a> · <a href="#">Política de privacidade</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
-
-                <div className="flex items-center my-4">
-                    <div className="flex-grow border-t border-gray-400"></div>
-                    <span className="mx-4 text-sm text-[#4A4A4A]">ou</span>
-                    <div className="flex-grow border-t border-gray-400"></div>
-                </div>
-                <button
-                    className="w-full border border-gray-300 py-2 text-[#4A4A4A]"
-                    onClick={() => router.push("/register")}
-                >
-                    Cadastrar
-                </button>
-                <div className="text-center text-xs text-[#4A4A4A] font-light mt-8">
-                    <a href="#">Termos de uso</a> · <a href="#">Política de privacidade</a>
-                </div>
             </div>
 
             <div className="hidden lg:flex flex-grow">
