@@ -52,7 +52,7 @@ export default function RegisterPage() {
 
     return (
         <div className="flex min-h-screen items-center justify-start bg-[#F9F9F9] w-full">
-            <div className="bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.15)] p-8 w-full sm:w-96 lg:w-[450px] ml-20 z-10">
+            <div className="bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.15)] p-8 w-full sm:w-96 lg:w-[450px] md:ml-20 lg:ml-32 xl:ml-40 2xl:ml-80 z-10 scale-80 md:scale-90 lg:scale-95 xl:scale-105 2xl:scale-125">
                 <div className="flex justify-center mb-6">
                     <Image
                         src="/imgs/assets/logo.png"
